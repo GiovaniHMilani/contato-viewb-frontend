@@ -1,0 +1,11 @@
+<div class="card mt-2 ml-2 mr-2" *ngFor="let contato of contatos | async">
+  <div class="card-header">
+    <h5>{{contato.nome + ' ' + contato.sobrenome}}</h5>
+  </div>
+  <div class="card-body">
+    <p class="card-text">Email: {{contato.email}}</p>
+    <p class="card-text">Telefone: {{contato.telefone}}</p>
+    <button type="button" class="btn btn-primary" (click)="edit(contato , contato._id)">Editar</button>
+    <button type="button" class="btn btn-danger ml-2" (click)="delete(contato._id)" onClick="window.location.reload()">Excluir</button>
+  </div>
+</div>
