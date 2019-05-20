@@ -36,4 +36,10 @@ export class ListComponent implements OnInit {
     this.contatoDataService.changeContato(contato, key);
   }
 
+  add(){
+    this.dialog.open(EditComponent, {
+      width: '50%',
+    });
+  }
+
 }

@@ -1,20 +1,20 @@
 <div class="container">
-  <form class="mt-2" (ngSubmit)="onSubmit()">
+  <form class="mt-2" (ngSubmit)="onSubmit()" #contatoForm="ngForm">
     <div class="form-group">
       <label>Nome</label>
-      <input type="text" class="form-control" [(ngModel)]="contato.nome" name="nome" />
+      <input type="text" class="form-control" [(ngModel)]="contato.nome" name="nome" required />
     </div>
     <div class="form-group">
       <label>Sobrenome</label>
-      <input type="text" class="form-control" [(ngModel)]="contato.sobrenome" name="sobrenome" />
+      <input type="text" class="form-control" [(ngModel)]="contato.sobrenome" name="sobrenome" required />
     </div>
     <div class="form-group">
       <label>Telefone</label>
-      <input type="text" class="form-control" [(ngModel)]="contato.telefone" name="telefone" />
+      <input type="text" class="form-control" [(ngModel)]="contato.telefone" name="telefone" required />
     </div>
     <div class="form-group">
       <label>Email</label>
-      <input type="email" class="form-control" [(ngModel)]="contato.email" name="email" />
+      <input type="email" class="form-control" [(ngModel)]="contato.email" name="email" required/>
     </div>
     <div class="form-group">
       <label>Skype</label>
@@ -25,6 +25,6 @@
       <input type="text" class="form-control" [(ngModel)]="contato.twitter" name="twitter" />
     </div>
 
-    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!contatoForm.form.valid">Salvar</button>
   </form>
 </div>

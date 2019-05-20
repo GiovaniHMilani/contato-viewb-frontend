@@ -1,4 +1,5 @@
-<div class="card mt-2 ml-2 mr-2" *ngFor="let contato of contatos | async">
+<button type="button" class="btn btn-primary btn-lg btn-block mat-elevation-z2" (click)='add()'>ADICIONAR NOVO CONTATO</button>
+<div class="card mt-3 ml-3 mr-3 mat-elevation-z2" *ngFor="let contato of contatos | async">
   <div class="card-header">
     <h5>{{contato.nome + ' ' + contato.sobrenome}}</h5>
   </div>
